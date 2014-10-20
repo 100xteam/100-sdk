@@ -5,87 +5,12 @@
 
     
 
-###account:
-####Query List:
-`GET `
-
-####Detail:
-`POST /:account_id`
-
-
-####Update:
-`POST /:account_id`
-
-####Delete:
-`DELETE /:account_id`
     
 
     
 
-###application:
-####Query List:
-`GET /apps`
-
-####Detail:
-`POST /apps/:application_id`
-
-
-####Update:
-`POST /apps/:application_id`
-
-####Delete:
-`DELETE /apps/:application_id`
     
 
-    
-
-###accessToken:
-####Query List:
-`GET /access_tokens`
-
-####Detail:
-`POST /access_tokens/:accessToken_id`
-
-
-####Update:
-`POST /access_tokens/:accessToken_id`
-
-####Delete:
-`DELETE /access_tokens/:accessToken_id`
-    
-
-    
-
-###requestCode:
-####Query List:
-`GET /request_codes`
-
-####Detail:
-`POST /request_codes/:requestCode_id`
-
-
-####Update:
-`POST /request_codes/:requestCode_id`
-
-####Delete:
-`DELETE /request_codes/:requestCode_id`
-    
-
-    
-
-###event:
-####Query List:
-`GET /events`
-
-####Detail:
-`POST /events/:event_id`
-
-
-####Update:
-`POST /events/:event_id`
-
-####Delete:
-`DELETE /events/:event_id`
     
 
     
