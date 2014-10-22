@@ -18,75 +18,6 @@
 
     
 
-###Tag:
-
-
-####Query List:
-`GET /tags`
-
-#####NodeJS:
-```
-sdk100.find({ }, function(err, tags){
-    if(err) throw err;//Error
-    console.log(tags);//Success
-});
-```
-
-####Detail:
-`POST /tags/:tag_id`
-
-#####NodeJS:
-```
-sdk100.findOne({ _id:'tag_id' }, function(err, tag){
-    if(err) throw err;//Error
-    if(!tag) throw new Error("No Tag");
-
-    console.log(tag);//Success
-});
-```
-
-####Update:
-`POST /tags/:tag_id`
-#####NodeJS:
-```
-sdk100.findOne({ _id:'tag_id' }, function(err, tag){
-    if(err) throw err;//Error
-    if(!tag) throw new Error("No Tag");
-
-    //console.log(tag);//Success
-
-    .
-        tag.namespace = ...;
-    .
-        tag.name = ...;
-    .
-        tag.desc = ...;
-    .
-        tag.archiveDate = ...;
-    
-    tag.save(function(err){
-        if(err) throw err;//Error
-        console.log("Successfully saved tag");//Success
-    });
-});
-```
-
-####Delete:
-`DELETE /tags/:tag_id`
-
-
-#####NodeJS:
-!!!!NOTE: Matt has not written this yet
-```
-tag.remove(function(err){
-    if(err) throw err;//Error
-    console.log("Successfully removed tag");//Success
-});
-```
-    
-
-    
-
 ###Project:
 
 
@@ -124,33 +55,33 @@ sdk100.findOne({ _id:'project_id' }, function(err, project){
 
     //console.log(project);//Success
 
-    .
+    
         project.namespace = ...;
-    .
+    
         project.name = ...;
-    .
+    
         project.type = ...;
-    .
+    
         project.subType = ...;
-    .
+    
         project.tagline = ...;
-    .
+    
         project.company = ...;
-    .
+    
         project.desc = ...;
-    .
+    
         project.enrollment_type = ...;
-    .
+    
         project.original_img = ...;
-    .
+    
         project.thumb_img = ...;
-    .
+    
         project.website_url = ...;
-    .
+    
         project.owner = ...;
-    .
+    
         project.location = ...;
-    .
+    
         project.archiveDate = ...;
     
     project.save(function(err){
@@ -213,13 +144,13 @@ sdk100.findOne({ _id:'projectSkill_id' }, function(err, projectSkill){
 
     //console.log(projectSkill);//Success
 
-    .
+    
         projectSkill._name_cache = ...;
-    .
+    
         projectSkill.project = ...;
-    .
+    
         projectSkill.skill = ...;
-    .
+    
         projectSkill.archiveDate = ...;
     
     projectSkill.save(function(err){
@@ -282,13 +213,13 @@ sdk100.findOne({ _id:'accountSkill_id' }, function(err, accountSkill){
 
     //console.log(accountSkill);//Success
 
-    .
+    
         accountSkill._name_cache = ...;
-    .
+    
         accountSkill.account = ...;
-    .
+    
         accountSkill.skill = ...;
-    .
+    
         accountSkill.archiveDate = ...;
     
     accountSkill.save(function(err){
@@ -351,17 +282,17 @@ sdk100.findOne({ _id:'role_id' }, function(err, role){
 
     //console.log(role);//Success
 
-    .
+    
         role.permissions = ...;
-    .
+    
         role.archiveDate = ...;
-    .
+    
         role.approvedDate = ...;
-    .
+    
         role.assignee = ...;
-    .
+    
         role.assignor = ...;
-    .
+    
         role.project = ...;
     
     role.save(function(err){
@@ -424,43 +355,43 @@ sdk100.findOne({ _id:'profile_id' }, function(err, profile){
 
     //console.log(profile);//Success
 
-    .
+    
         profile.name = ...;
-    .
+    
         profile.desc = ...;
-    .
+    
         profile.type = ...;
-    .
+    
         profile.company = ...;
-    .
+    
         profile.tagline = ...;
-    .
+    
         profile.original_img = ...;
-    .
+    
         profile.thumb_img = ...;
-    .
+    
         profile.facebook_url = ...;
-    .
+    
         profile.twitter_url = ...;
-    .
+    
         profile.linkedin_url = ...;
-    .
+    
         profile.instagram_url = ...;
-    .
+    
         profile.github_url = ...;
-    .
+    
         profile.website_url = ...;
-    .
+    
         profile.blog_url = ...;
-    .
+    
         profile.owner = ...;
-    .
+    
         profile.location = ...;
-    .
+    
         profile.archiveDate = ...;
-    .
+    
         profile.approveDate = ...;
-    .
+    
         profile.approveUser = ...;
     
     profile.save(function(err){
@@ -523,15 +454,15 @@ sdk100.findOne({ _id:'skill_id' }, function(err, skill){
 
     //console.log(skill);//Success
 
-    .
+    
         skill.name = ...;
-    .
+    
         skill.namespace = ...;
-    .
+    
         skill.type = ...;
-    .
+    
         skill.value = ...;
-    .
+    
         skill.archiveDate = ...;
     
     skill.save(function(err){
@@ -594,35 +525,37 @@ sdk100.findOne({ _id:'location_id' }, function(err, location){
 
     //console.log(location);//Success
 
-    .
+    
         location.name = ...;
-    .
+    
         location.namespace = ...;
-    .
+    
         location.desc = ...;
-    .
+    
         location.type = ...;
-    .
+    
         location.tagline = ...;
-    .
+    
         location.original_img = ...;
-    .
+    
         location.thumb_img = ...;
-    .
+    
+        location.logo_img = ...;
+    
         location.facebook_url = ...;
-    .
+    
         location.twitter_url = ...;
-    .
+    
         location.linkedin_url = ...;
-    .
+    
         location.instagram_url = ...;
-    .
+    
         location.website_url = ...;
-    .
+    
         location.blog_url = ...;
-    .
+    
         location.archiveDate = ...;
-    .
+    
         location.host = ...;
     
     location.save(function(err){
@@ -685,15 +618,15 @@ sdk100.findOne({ _id:'curator_id' }, function(err, curator){
 
     //console.log(curator);//Success
 
-    .
+    
         curator._account_name = ...;
-    .
+    
         curator._location_name = ...;
-    .
+    
         curator.location = ...;
-    .
+    
         curator.account = ...;
-    .
+    
         curator.archiveDate = ...;
     
     curator.save(function(err){
