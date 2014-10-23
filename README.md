@@ -26,7 +26,7 @@
 
 #####NodeJS:
 ```
-sdk100.find({ }, function(err, projects){
+sdk100.Project.find({ }, function(err, projects){
     if(err) throw err;//Error
     console.log(projects);//Success
 });
@@ -37,7 +37,7 @@ sdk100.find({ }, function(err, projects){
 
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'project_id' }, function(err, project){
+sdk100.Project.findOne({ _id:'project_id' }, function(err, project){
     if(err) throw err;//Error
     if(!project) throw new Error("No Project");
 
@@ -49,7 +49,7 @@ sdk100.findOne({ _id:'project_id' }, function(err, project){
 `POST /projects/:project_id`
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'project_id' }, function(err, project){
+sdk100.Project.findOne({ _id:'project_id' }, function(err, project){
     if(err) throw err;//Error
     if(!project) throw new Error("No Project");
 
@@ -115,7 +115,7 @@ project.remove(function(err){
 
 #####NodeJS:
 ```
-sdk100.find({ }, function(err, projectSkills){
+sdk100.ProjectSkill.find({ }, function(err, projectSkills){
     if(err) throw err;//Error
     console.log(projectSkills);//Success
 });
@@ -126,7 +126,7 @@ sdk100.find({ }, function(err, projectSkills){
 
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'projectSkill_id' }, function(err, projectSkill){
+sdk100.ProjectSkill.findOne({ _id:'projectSkill_id' }, function(err, projectSkill){
     if(err) throw err;//Error
     if(!projectSkill) throw new Error("No ProjectSkill");
 
@@ -138,7 +138,7 @@ sdk100.findOne({ _id:'projectSkill_id' }, function(err, projectSkill){
 `POST /project_skill/:projectSkill_id`
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'projectSkill_id' }, function(err, projectSkill){
+sdk100.ProjectSkill.findOne({ _id:'projectSkill_id' }, function(err, projectSkill){
     if(err) throw err;//Error
     if(!projectSkill) throw new Error("No ProjectSkill");
 
@@ -184,7 +184,7 @@ projectSkill.remove(function(err){
 
 #####NodeJS:
 ```
-sdk100.find({ }, function(err, accountSkills){
+sdk100.AccountSkill.find({ }, function(err, accountSkills){
     if(err) throw err;//Error
     console.log(accountSkills);//Success
 });
@@ -195,7 +195,7 @@ sdk100.find({ }, function(err, accountSkills){
 
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'accountSkill_id' }, function(err, accountSkill){
+sdk100.AccountSkill.findOne({ _id:'accountSkill_id' }, function(err, accountSkill){
     if(err) throw err;//Error
     if(!accountSkill) throw new Error("No AccountSkill");
 
@@ -207,7 +207,7 @@ sdk100.findOne({ _id:'accountSkill_id' }, function(err, accountSkill){
 `POST /account_skill/:accountSkill_id`
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'accountSkill_id' }, function(err, accountSkill){
+sdk100.AccountSkill.findOne({ _id:'accountSkill_id' }, function(err, accountSkill){
     if(err) throw err;//Error
     if(!accountSkill) throw new Error("No AccountSkill");
 
@@ -249,22 +249,22 @@ accountSkill.remove(function(err){
 
 
 ####Query List:
-`GET /roles`
+`GET /projects/:project/roles`
 
 #####NodeJS:
 ```
-sdk100.find({ }, function(err, roles){
+sdk100.Role.find({ }, function(err, roles){
     if(err) throw err;//Error
     console.log(roles);//Success
 });
 ```
 
 ####Detail:
-`POST /roles/:role_id`
+`POST /projects/:project/roles/:role_id`
 
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'role_id' }, function(err, role){
+sdk100.Role.findOne({ _id:'role_id' }, function(err, role){
     if(err) throw err;//Error
     if(!role) throw new Error("No Role");
 
@@ -273,10 +273,10 @@ sdk100.findOne({ _id:'role_id' }, function(err, role){
 ```
 
 ####Update:
-`POST /roles/:role_id`
+`POST /projects/:project/roles/:role_id`
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'role_id' }, function(err, role){
+sdk100.Role.findOne({ _id:'role_id' }, function(err, role){
     if(err) throw err;//Error
     if(!role) throw new Error("No Role");
 
@@ -303,7 +303,7 @@ sdk100.findOne({ _id:'role_id' }, function(err, role){
 ```
 
 ####Delete:
-`DELETE /roles/:role_id`
+`DELETE /projects/:project/roles/:role_id`
 
 
 #####NodeJS:
@@ -326,7 +326,7 @@ role.remove(function(err){
 
 #####NodeJS:
 ```
-sdk100.find({ }, function(err, profiles){
+sdk100.Profile.find({ }, function(err, profiles){
     if(err) throw err;//Error
     console.log(profiles);//Success
 });
@@ -337,7 +337,7 @@ sdk100.find({ }, function(err, profiles){
 
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'profile_id' }, function(err, profile){
+sdk100.Profile.findOne({ _id:'profile_id' }, function(err, profile){
     if(err) throw err;//Error
     if(!profile) throw new Error("No Profile");
 
@@ -349,7 +349,7 @@ sdk100.findOne({ _id:'profile_id' }, function(err, profile){
 `POST /:account/profile/:profile_id`
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'profile_id' }, function(err, profile){
+sdk100.Profile.findOne({ _id:'profile_id' }, function(err, profile){
     if(err) throw err;//Error
     if(!profile) throw new Error("No Profile");
 
@@ -425,7 +425,7 @@ profile.remove(function(err){
 
 #####NodeJS:
 ```
-sdk100.find({ }, function(err, skills){
+sdk100.Skill.find({ }, function(err, skills){
     if(err) throw err;//Error
     console.log(skills);//Success
 });
@@ -436,7 +436,7 @@ sdk100.find({ }, function(err, skills){
 
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'skill_id' }, function(err, skill){
+sdk100.Skill.findOne({ _id:'skill_id' }, function(err, skill){
     if(err) throw err;//Error
     if(!skill) throw new Error("No Skill");
 
@@ -448,7 +448,7 @@ sdk100.findOne({ _id:'skill_id' }, function(err, skill){
 `POST /skills/:skill_id`
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'skill_id' }, function(err, skill){
+sdk100.Skill.findOne({ _id:'skill_id' }, function(err, skill){
     if(err) throw err;//Error
     if(!skill) throw new Error("No Skill");
 
@@ -496,7 +496,7 @@ skill.remove(function(err){
 
 #####NodeJS:
 ```
-sdk100.find({ }, function(err, locations){
+sdk100.Location.find({ }, function(err, locations){
     if(err) throw err;//Error
     console.log(locations);//Success
 });
@@ -507,7 +507,7 @@ sdk100.find({ }, function(err, locations){
 
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'location_id' }, function(err, location){
+sdk100.Location.findOne({ _id:'location_id' }, function(err, location){
     if(err) throw err;//Error
     if(!location) throw new Error("No Location");
 
@@ -519,7 +519,7 @@ sdk100.findOne({ _id:'location_id' }, function(err, location){
 `POST /locations/:location_id`
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'location_id' }, function(err, location){
+sdk100.Location.findOne({ _id:'location_id' }, function(err, location){
     if(err) throw err;//Error
     if(!location) throw new Error("No Location");
 
@@ -589,7 +589,7 @@ location.remove(function(err){
 
 #####NodeJS:
 ```
-sdk100.find({ }, function(err, curators){
+sdk100.Curator.find({ }, function(err, curators){
     if(err) throw err;//Error
     console.log(curators);//Success
 });
@@ -600,7 +600,7 @@ sdk100.find({ }, function(err, curators){
 
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'curator_id' }, function(err, curator){
+sdk100.Curator.findOne({ _id:'curator_id' }, function(err, curator){
     if(err) throw err;//Error
     if(!curator) throw new Error("No Curator");
 
@@ -612,7 +612,7 @@ sdk100.findOne({ _id:'curator_id' }, function(err, curator){
 `POST /locations/:location/curators/:curator_id`
 #####NodeJS:
 ```
-sdk100.findOne({ _id:'curator_id' }, function(err, curator){
+sdk100.Curator.findOne({ _id:'curator_id' }, function(err, curator){
     if(err) throw err;//Error
     if(!curator) throw new Error("No Curator");
 
