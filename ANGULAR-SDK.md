@@ -102,3 +102,46 @@ angular.module('static100.ProfileCtl', ['core100.profile.service','njax.bootstra
 ```
 <div ng-controller="ProfileCtl" ng-include="'/templates/controllers/select_members.html'"></div>
 ```
+
+####/js/controllers/ProjectCtl.js
+
+```
+'use strict';
+
+/* Controllers */
+
+angular.module('static100.ProjectCtl', ['core100.project.service', 'njax.bootstrap'])
+	.controller(
+		'ProjectCtl',
+		[
+			'$scope',
+			'$cookies',
+			'ProjectService',
+			'NJaxBootstrap',
+			function ($scope, $cookies, ProjectService, NJaxBootstrap) {
+				$scope.selectedSkills = [];
+				$scope.skills = [];
+				$scope.skills_loaded = false;
+				NJaxBootstrap.then(function () {
+					var projects = ProjectService.query({ location: NJaxBootstrap._location._id },function () {
+						$scope.projects = projects;
+					});
+
+					for (var i in NJaxBootstrap._location.tag_options.skills.children) {
+						$scope.skills.push(NJaxBootstrap._location.tag_options.skills.children[i]);
+					}
+					$scope.skills_loaded = true;
+				});
+
+
+				$scope.filterSkills = function (selectedSkills) {
+					var tags = selectedSkills.join(',');
+					ProjectService.query({ location: NJaxBootstrap._location._id, tags: tags }).$promise.then(function (projects) {
+						$scope.projects = projects;
+					});
+
+				}
+			}
+		]
+	);
+```
