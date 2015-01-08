@@ -98,6 +98,7 @@ angular.module('static100.ProfileCtl', ['core100.profile.service','njax.bootstra
 	```
 	
 ####Profile List Html:
+
 ```
 <div ng-controller="ProfileCtl" ng-include="'/templates/controllers/select_members.html'"></div>
 ```
