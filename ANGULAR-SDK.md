@@ -95,7 +95,7 @@ angular.module('static100.ProfileCtl', ['core100.profile.service','njax.bootstra
 			}
 		]
 	);
-	```
+```
 	
 ####Profile List Html:
 
