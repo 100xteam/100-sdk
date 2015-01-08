@@ -6,7 +6,7 @@
 
 <script src="//townsqua.re/sdk.js"></script>
 
-<script src="//{{ core_asset_url }}/js/services/profile.js"></script>
-<script src="//{{ core_asset_url }}/js/services/project.js"></script>
+<script src="//townsqua.re/js/services/profile.js"></script>
+<script src="//townsqua.re/js/services/project.js"></script>
 ```
   
