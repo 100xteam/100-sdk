@@ -96,6 +96,40 @@ angular.module('static100.ProfileCtl', ['core100.profile.service','njax.bootstra
 		]
 	);
 ```
+####/templates/controllers/select_memebers.html:
+```
+<div class="row"> 
+  <div class="col-sm-4">
+      <h2>Current Members</h2>
+  </div> 
+  <form id="options" class="form-inline col-sm-4 col-sm-push-4" role="form">
+    <div class="form-group col-sm-12">
+        <select id="skills-filter" data-placeholder="Filter by skills..." class="form-control"
+            chosen="$parent.skills"
+            ng-model="$parent.selectedSkills"
+            ng-options="skill.value as skill.name for skill in $parent.skills"
+            ng-change="filterSkills($parent.selectedSkills)"
+            ng-if="$parent.skills_loaded"
+            multiple>
+        </select>
+    </div>
+  </form>
+</div>
+<div class="row row-centered clearfix">
+  <ul class="list-unstyled list-inline">
+    <li class="text-center profile-single" ng-repeat="profile in $parent.profiles" >
+      <a href="//{{profile.location_friendly_url}}">
+        <div class="profile-img-container">
+          <figure style="background-image: url('{{profile.original_img_s3.url}}')" alt="{{ profile.name }}" class="profile-img"></figure>
+        </div>
+        <p class="name">
+            {{ profile.name }}
+        </p>
+      </a>
+    </li>
+  </ul>
+</div>
+```
 	
 ####Profile List Html:
 
@@ -144,4 +178,38 @@ angular.module('static100.ProjectCtl', ['core100.project.service', 'njax.bootstr
 			}
 		]
 	);
+```
+###/templates/controllers/select_projects.html:
+```
+<div class="row">
+    <div class="col-sm-4">
+        <h2>Projects</h2>
+    </div> 
+    <form id="options" class="form-inline col-sm-4 col-sm-push-4" role="form">
+        <div class="form-group col-sm-12"> 
+            <select  id="skills-filter" data-placeholder="Filter by skills..." class="form-control"
+            chosen="skills"
+            ng-model="$parent.selectedSkills"
+            ng-options="skill.value as skill.name for skill in $parent.skills"
+            ng-change="filterSkills($parent.selectedSkills)"
+            ng-if="$parent.skills_loaded"
+            multiple>
+        </select>
+        </div>
+    </form>
+</div>
+<div class="row row-centered clearfix">
+    <ul class="list-unstyled list-inline">
+        <li class="text-center profile-single ng-cloak" ng-repeat="project in $parent.projects" ng-hide="project.hide">
+            <a href="//{{project.location_friendly_url}}">
+                <div class="profile-img-container">
+                    <figure style="background-image: url('{{project.original_img_s3.url}}')" alt="{{project.name}}" class="profile-img">
+                </div>
+                <p class="name">
+                  {{ project.name }}
+                </p>
+            </a>
+        </li>
+    </ul>
+</div>
 ```
